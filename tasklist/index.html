@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<!--<script src="js/jQuery-2.1.4.js" type="text/javascript"></script>
+		<script src="js/bootstrap.js" type="text/javascript"></script>-->
+		
+	<!--	<link rel="stylesheet" href="css/bootstrap.css"></link>
+		<link rel="stylesheet" href="css/bootstrap-theme.css"></link>-->
+		<link rel="stylesheet" href="css/style.css"></link>
+	</head>
+	<body>
+		<h1>Todo</h1>
+		<table id="taskTable">
+			<thead>
+				<tr data-bind="visible: tasks().length > 0">
+					<td>id</td><td>Beschreibung</td><td>erledigt</td><td></td>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: tasks">
+				<tr data-bind="css: {done: done}">
+					<td data-bind="text: $index"></td>
+					<td><input name="description" id="description" value="" type="text" data-bind="value: description"></input></td>
+					<td><input name="done" id="done" value="" type="checkbox" data-bind="checked: done"></input></td>
+					<td><a href ="#" data-bind="click: $parent.removeTask">l&ouml;schen</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<!--p data-bind="text: data"></p-->
+		<button data-bind="click: addTask">neu</button>
+		<!--button data-bind="click: save, visible: tasks().length > 0">speichern</button>
+		<button data-bind="click: load">laden</button-->
+		<script src="js/knockout-3.4.0.js" type="text/javascript"></script>
+		<script src="js/tasklistModel.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		var observer=new MutationObserver(function(){
+			model.save();
+			alert("dom");
+		});
+		var taskTable=document.querySelector("#taskTable");
+		var config = { attributes: true, childList: true, characterData: true };
+ 
+		observer.observe(taskTable, config);
+		</script>
+	</body>
+</html>
