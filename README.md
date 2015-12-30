@@ -1,2 +1,2 @@
 # js-html-experiments
-Herr are a bunch oft experiments i die with JS and html
+Here are a bunch of experiments I did with JS and html
