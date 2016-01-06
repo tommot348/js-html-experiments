@@ -26,7 +26,9 @@ function tasklistModel(){
 		localStorage.setItem("tasks",ko.toJSON(self));
 		self.data("saved "+ ko.toJSON(self));
 	};
+	
+	
+	self.load();
 };
 var model=new tasklistModel();
 ko.applyBindings(model);
-model.load();
