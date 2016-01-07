@@ -1,0 +1,30 @@
+function Tile(x,y,width,height,color){
+	this.graphic=new Rect();
+	this.x=x;
+	this.y=y;
+	this.color=color;
+	this.currentY=this.y*height;
+	this.newY=this.currentY;
+	this.falling=false;
+	this.graphic.init(this.x*width,this.y*height,width,height,0,this.color);
+	this.setFalling=function(newY){
+		this.newY=newY*height;
+		this.falling=true;
+		this.y=Math.round(this.newY/height);
+	};
+	this.shift=function(deltaX){
+		this.x+=deltaX;
+		this.graphic.translate(deltaX*width,0);
+	}
+	this.draw=function(ctx){
+		if(this.currentY>this.newY){
+			this.graphic.translate(0,-5);
+			this.currentY=this.currentY-5;
+		}else{
+			this.currentY=this.newY;
+			this.color=this.graphic.color;
+			this.falling=false;
+		}
+		this.graphic.draw(ctx);
+	}
+}

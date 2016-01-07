@@ -1,0 +1,18 @@
+m<h1>Conways Game of Life</h1>
+<p>Click "Start" to begin the simulation.</p>
+<p>You can set the time between steps in the textfield: </p>
+<p>1 = 1 millisecond, 1000 = 1 second.</p>
+<p>With "Step" you can advance the simulation by one step</p>
+<p>"Stop" stops the simulation</p>
+<p>You can draw within the frame. You can change the color with the color picker</p>
+
+<canvas id="gol" width="400px" height="400px" style="border: 1px solid black; cursor:crosshair;"></canvas>
+<canvas id="colors" width="100px" height="100px" style="border: 1px solid black; cursor:crosshair;"></canvas>
+<input id="speed" type="text" value="1000"></input>
+<input type="button" onclick="gol.start();" value="start" />
+<input type="button" onclick="gol.stop();" value="stop" />
+<input type="button" onclick="gol.step();" value="step" />
+<script type="application/javascript">
+    gol.init("gol", 100, 100, 400, 400);
+    colors.init("colors");
+</script>
