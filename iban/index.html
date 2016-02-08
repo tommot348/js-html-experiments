@@ -4,17 +4,16 @@
         <script src="strdiv.js"></script>
 	</head>
 	<body>
-	<p id="result"></p>
-		<input type="text" id="kto"></input>
-		<input type="text" id="blz"></input>
-	
+	   <p id="result"></p>
+        <p>Konto: <input type="text" id="kto"></input></html></p>
+        <p>Bankleitzahl: <input type="text" id="blz"></input></p>
 		<script>
-		function compute(){
-			var ktonr=parseInt((document.getElementById("kto")).value);
-			var blznr=parseInt((document.getElementById("blz")).value);
-			(document.getElementById("result")).textContent=iban(blznr,ktonr);
-		}
-		</script>
-	<button id="submit" onclick="compute()">ok</button>
-	
-</body>
+            function compute(){
+                var ktonr=parseInt((document.getElementById("kto")).value);
+                var blznr=parseInt((document.getElementById("blz")).value);
+                (document.getElementById("result")).textContent=iban(blznr,ktonr);
+            }
+        </script>
+        <button id="submit" onclick="compute()">ok</button>
+    </body>
+</html>
