@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script src="iban.js"></script>
+	</head>
+	<body>
+	<p id="result"></p>
+		<input type="text" id="kto"></input>
+		<input type="text" id="blz"></input>
+	
+		<script>
+		function compute(){
+			var ktonr=parseInt((document.getElementById("kto")).value);
+			var blznr=parseInt((document.getElementById("blz")).value);
+			(document.getElementById("result")).textContent=iban(blznr,ktonr);
+		}
+		</script>
+	<button id="submit" onclick="compute()">ok</button>
+	
+</body>
